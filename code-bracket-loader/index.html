@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code bracket loader</title>
+
+    <style>
+      body {
+        background-color: #333;
+        color: #fff;
+        height: 100vh;
+        display: grid;
+      }
+
+      .bracket-loader {
+        font-weight: bold;
+        font-size: 5rem;
+        opacity: 0.8;
+        place-self: center;
+      }
+
+      .bracket-loader span {
+        display: inline-block;
+        padding: 1.25rem;
+        animation: scale_right 1.5s alternate infinite ease-in-out;
+      }
+
+      .bracket-loader span:nth-child(odd) {
+        animation: scale_left 1.5s alternate infinite ease-in-out;
+      }
+
+      @keyframes scale_right {
+        0% {
+          transform: scale(0.8) translateX(10rem);
+          opacity: 0.4;
+        }
+
+        50% {
+          transform: scale(0.5) translateX(-10rem);
+        }
+
+        100% {
+          transform: scale(1) translateX(0);
+        }
+      }
+
+      @keyframes scale_left {
+        0% {
+          transform: scale(0.8) translateX(-10rem);
+          opacity: 0.4;
+        }
+
+        50% {
+          transform: scale(0.5) translateX(10rem);
+        }
+
+        100% {
+          transform: scale(1) translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bracket-loader">
+      <span>[</span>
+      <span>]</span>
+    </div>
+  </body>
+</html>

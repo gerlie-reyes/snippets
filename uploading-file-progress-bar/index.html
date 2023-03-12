@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Upload Progress Bar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>File Upload Progress Bar</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+      <div class="content">
+        <p class="message">
+          Select a file to upload from your computer or device.
+        </p>
+
+        <div class="actions">
+          <label for="file" class="upload-btn"
+            >Choose File
+            <input
+              type="file"
+              id="file-upload"
+              name="file-upload"
+              onchange="changeUploadFile()"
+            />
+          </label>
+        </div>
+      </div>
+
+      <input
+        type="button"
+        value="Upload"
+        class="button"
+        onclick="startUpload()"
+      />
+    </form>
+    <div id="progress-bar-container">
+      <div id="progress-bar"></div>
+      <div id="progress-bar-text"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+#upload-form, #progress-bar-container {
+  width: 600px;
+}
+
+#progress-bar-container {
+  display: none;
+}
+
+#progress-bar {
+  width: 0%;
+  height: 16px;
+  background-color: green;
+  margin: 10px 0;
+  border: 1.5px solid #333333;  
+  border-radius: 10px;
+}
+
+.button {
+  background-color: transparent;
+  border-radius: 100px;
+  border: 0.125rem dashed rgba(27, 94, 92, 0.8);
+  padding: 0.5rem 2rem;
+  margin: 20px 0 10px 0;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerlie Reyes | Portfolio</title>
+
+    <style>
+      body {
+        background-color: #333;
+        color: #fff;
+        height: 100vh;
+      }
+
+      .loader-container {
+        background-color: #333;
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      .bracket-loader {
+        font-weight: bold;
+        font-size: 5rem;
+        opacity: 0.8;
+        place-self: center;
+      }
+
+      .bracket-loader span {
+        display: inline-block;
+        padding: 1.25rem;
+        animation: scale_right 1.5s alternate infinite ease-in-out;
+      }
+
+      .bracket-loader span:nth-child(odd) {
+        animation: scale_left 1.5s alternate infinite ease-in-out;
+      }
+
+      @keyframes scale_right {
+        0% {
+          transform: scale(0.8) translateX(10rem);
+          opacity: 0.4;
+        }
+
+        50% {
+          transform: scale(0.5) translateX(-10rem);
+        }
+
+        100% {
+          transform: scale(1) translateX(0);
+        }
+      }
+
+      @keyframes scale_left {
+        0% {
+          transform: scale(0.8) translateX(-10rem);
+          opacity: 0.4;
+        }
+
+        50% {
+          transform: scale(0.5) translateX(10rem);
+        }
+
+        100% {
+          transform: scale(1) translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Gerlie Reyes</h1>
+
+      <img
+        src="https://fastly.picsum.photos/id/6/5000/3333.jpg?hmac=pq9FRpg2xkAQ7J9JTrBtyFcp9-qvlu8ycAi7bUHlL7I"
+        width="100%"
+      />
+    </main>
+    <div class="loader-container">
+      <div class="bracket-loader">
+        <span>[</span>
+        <span>]</span>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      document.onreadystatechange = function () {
+        console.log(document.readyState);
+
+        if (document.readyState === 'complete') {
+          document.querySelector('.loader-container').style.display = 'none';
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flipping CTA button</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+
+      .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      button {
+        font-family: 'Barlow', sans-serif;
+        background: transparent;
+        border: none;
+      }
+
+      .flip-inner {
+        position: relative;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      .front,
+      .back {
+        display: block;
+        text-align: center;
+        font-size: bold;
+        text-transform: uppercase;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+
+      .front {
+        position: absolute;
+      }
+
+      .back,
+      .rotate {
+        transform: rotateX(180deg);
+      }
+
+      .btn-grad {
+        background-image: linear-gradient(
+          to right,
+          #e55d87 0%,
+          #5fc3e4 51%,
+          #e55d87 100%
+        );
+        margin: 10px;
+        padding: 15px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .btn-grad:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <button class="flip">
+        <div class="flip-inner btn-grad">
+          <span class="front">follow</span>
+          <span class="back">thanks!</span>
+        </div>
+      </button>
+    </div>
+
+    <script type="text/javascript">
+      const flip = document.querySelector('.flip');
+
+      flip.onclick = function () {
+        flip.firstElementChild.classList.toggle('rotate');
+      };
+    </script>
+  </body>
+</html>

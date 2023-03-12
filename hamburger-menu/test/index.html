@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Checkboxes Example</title>
+  </head>
+  <body>
+    <h1>Checkboxes Example</h1>
+    <label>
+      <input type="checkbox" name="option1" value="option1" /> Option 1 </label
+    ><br />
+    <label>
+      <input type="checkbox" name="option2" value="option2" /> Option 2 </label
+    ><br />
+    <label>
+      <input type="checkbox" name="option3" value="option3" /> Option 3 </label
+    ><br />
+    <label>
+      <input type="checkbox" name="option4" value="option4" /> Option 4 </label
+    ><br />
+    <br />
+    <label> <input type="checkbox" id="check-all" /> Check All </label>
+    <script>
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const checkAll = document.getElementById('check-all');
+
+      checkAll.addEventListener('click', () => {
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = checkAll.checked;
+        });
+      });
+    </script>
+  </body>
+</html>
